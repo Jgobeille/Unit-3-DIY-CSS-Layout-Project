@@ -54,10 +54,29 @@ figcaption {
 	padding: 1em;
 	background: rgba(19, 43, 102, .85);
 
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 }
+
+.overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+
+}
+
+
+figure:hover .overlay {
+	opacity: 1;
+}
+
+figcaption {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
 
 /* ================================= 
   Base Layout Styles
@@ -136,6 +155,7 @@ figcaption {
 	position: absolute;
 	top: -20px;
 	left: calc(45%);
+	z-index: 2;
 }
 
 /* ================================= 
@@ -143,6 +163,19 @@ figcaption {
 ==================================== */
 
 @media (min-width: 769px) {
+
+	body {
+		padding-top: 68px;
+	}
+
+	.main-header {
+		position: fixed;
+		background: #fff;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+		width: 100%;
+		top: 0;
+		z-index: 1000;
+	}
 
 	.container {
 		width: 90%;
